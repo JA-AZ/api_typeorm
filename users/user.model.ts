@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import {v4} from 'uuid';
-@Entity({ name: "users" }) // Table name
+@Entity({ name: "users" }) 
 export class User {
     @PrimaryGeneratedColumn('uuid')
     id!: string;
@@ -11,7 +11,7 @@ export class User {
     @Column({ type: "varchar", length: 50, unique: true, nullable: false })
     username!: string;
 
-    @Column({ type: "varchar", length: 255, nullable: false, select: false }) // Exclude by default
+    @Column({ type: "varchar", length: 255, nullable: false, select: false }) 
     passwordHash: string;
 
     @Column({ type: "varchar", length: 10, nullable: false })
